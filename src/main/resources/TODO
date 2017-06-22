@@ -1,0 +1,17 @@
+*) EtrakerApplication - Get the DB connection string values from properties file ---- Done
+*) Validate @Request inputs with @Valid and write custom messages and responses
+*) Implement custom json deserializer
+*) Authenticate the api requests using basic authentication ---- Done
+*) Implement custom token mechanism (API - Application Key/Secret - Request token/Access token
+*) Handle AspectJ accordingly ---- Done
+*) Apply quartz for tracking
+
+*) Securing API with basic authentication ---- Done
+
+*) Grab information/implement HAL(HyperMedia Application Language)/HATEOAS. This provides additional links associated with a particular resource/API 
+   for more reference - https://opencredo.com/hal-hypermedia-api-spring-hateoas/
+*) Understand @Transactional
+*) Make a sample use for Spring batch
+*) Implement OAUTH2 Authentication   
+   
+   

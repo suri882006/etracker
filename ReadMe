@@ -1,0 +1,17 @@
+Hi All,
+
+This is a simple maven and springboot based expense tracker application. Purpose here is to use most of the Spring features along with Hibernate/JPA with Mysql Database
+
+Version Used:
+
+JDK - 1.8
+SpringBoot - 1.5.3
+Spring jdbc - 4.3.8
+Hibernate core - 5.0.12
+Spring code - 4.3.8
+Mysql-connector - 5.1.4
+xampp version - 3.2.2
+Maven 3.2
+
+
+Refer src/main/resource/mynotes.txt for topics

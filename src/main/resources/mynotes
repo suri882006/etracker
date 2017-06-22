@@ -1,0 +1,48 @@
+*) By default, the context path for springboot application is “/”.
+to modify 
+server.port=8080
+server.contextPath=/mkyong
+in /src/main/resources/application.properties
+
+can also update by passing command line system properties args like java -jar -Dserver.contextPath=/etracker-1.0.jar
+
+
+*) The response status format 
+{
+    "status": 404,
+    "code": 40483,
+    "message": "Oops! It looks like that file does not exist.",
+    "developerMessage": "File resource for path /uploads/foobar.txt does not exist.  Please wait 10 minutes until the upload batch completes before checking again.",
+    "moreInfo": "http://www.mycompany.com/errors/40483"
+}
+
+*) @JsonIgnore property is used in pojo to exclude a field from getting serialized/deserialized in json request/response
+
+*) sessionFactory.setPackagesToScan("in.fourbits.etracker.entity"); in Etracker Application indicates the packages to be scanned for entities
+
+*) Implement ResponseBodyAdvice<Object> in @RestControllerAdvice to intercept the responseBody
+
+
+----- SpringBoot Profiles
+*) Create different profiles for different environment with files like application-dev.properties, application-prod.properties under src/main/resources
+
+*) Once env specific properties file are created use java -jar -Dspring.profiles.active=prod target/etracker-1.0.jar to set active profile as prod and run the application
+
+*) via STS goto Run configuration -> in the SpringBoot tab select the appropriate profiles
+
+*) @ConfigurationProperties(locations = "classpath:mail.properties", ignoreUnknownFields = false, prefix = "mail") This annotation can be added to any class which indicates
+   keyvalue pair in mail.properties file should be set class variables
+   
+*) We can also use @EnableConfigurationProperties(MailProperties.class) for a class MailConfiguration and use @Autowired for mailProperties 
+   (Ref - https://www.javacodegeeks.com/2014/09/using-configurationproperties-in-spring-boot.html)
+   
+*) Use @EnableWebSecurity to enable authentication and authorization of api requests. By default springboot itself provides a 
+   password(see console log when application starts) and username is 'user' use these credentials to create basic authentication for any API
+   
+*) API can be secured with in memory authentication, UserDetailService LDAP authentication, JDBC based authentication refer in.fourbits.etracker.SpringSecurityConfig 
+
+*) Refer in.fourbits.etracker.entity.Expense for using @OneToMany relationship
+
+*) Two impelementations are provided for in.fourbits.etracker.service.EtrackerService 
+	*) in.fourbits.etracker.service.EtrackerServiceHibernateImpl acting as primary implementation using manual hibernate session handling
+	*) in.fourbits.etracker.service.EtrackerServiceCrudRepoImpl using CrudRepository and HibernateTemplate
